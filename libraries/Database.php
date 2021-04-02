@@ -59,6 +59,7 @@ class Database {
 		//concatenate the last value
 		$sql_query .= "'" . $last_value . "'" . ")";
 		//sql insertion query
+		print($sql_query."<br>");
 
 		if ($db->query($sql_query) == TRUE) {
 			echo "New record created successfully...";
