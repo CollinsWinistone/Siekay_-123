@@ -1,3 +1,3 @@
-# Tujuane
-Enables poeple to find lovers,workmates,study mates etc...In summary helps people find mates who match their interests
+# Q&Answer
+Enables poeple to ask and get reliable and relevant answers to their questions
 # Siekay_-123
