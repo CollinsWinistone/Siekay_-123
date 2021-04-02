@@ -1,0 +1,21 @@
+textarea{
+    display: none;
+    width: 300px;
+    height: 50px;
+    background: white;
+    color: black ;
+    padding: 10px;
+    margin: 5px 0 -14px;
+}
+.ans_sub{
+    display: none;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+}
+.pop{
+    display: none;
+    text-align: center;
+    margin: 195.5px auto;
+    font-size: 12px;
+}
