@@ -31,9 +31,16 @@
 
     /**
      * Adds a response to a question in the list
+     * @param $table -Table to insert data into
+     * @param $columns to inseet data into
+     * @param $db Database connection
+     * @param $dbObj -Database CRUd file
+     * @param $q_id Question id to be answered
      */
-    public function answersQuestion()
+    public function answersQuestion($table,$columns,$values,$db,Database $dbObj)
     {
+      
+      $dbObj->insert($table,$columns,$values,$db);
 
     }
 
@@ -47,17 +54,37 @@
 
     /**
      * Display all questions based on Category
+     * @param dbObj -The database file containing CRUD 
+     *              operations
+     * @param table -The table storing question data
+     * @param columns -An array of columns to be returned 
+     *                for further processing
+     * @param cat_id -Category id to retrieve questions from
+     * @param conn -Database connection
      */
-    public function displayCategoryQuestion()
+    public function displayCategoryQuestion(Database $dbObj,
+                                            string $table,
+                                            array $columns,
+                                            int $cat_id,
+                                            mysqli $conn)
     {
-
+      $data = $dbObj->retrieve($columns,$table,"cat_id = $cat_id",$conn);
     }
     
     /**
      * Display all questions for a posted by a particular user
+     * @param user_id -Id of the user to retrieve questions
+     * posted by him/her
      */
-    public function displayUserQuestion()
+    public function displayUserQuestion(int $user_id,
+                                        Database $dbObj,
+                                        array $selectColumns,
+                                        string $condition,
+                                        mysqli $conn,
+                                        string $table)
     {
+      $qns = $dbObj->retrieve($selectColumns,$table,$condition,$conn);
+      return $qns;
 
     }
     /**
@@ -75,6 +102,8 @@
     {
 
     }
+    
+    
     
    
  }

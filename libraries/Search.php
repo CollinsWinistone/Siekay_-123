@@ -73,6 +73,38 @@ class Search {
 		}
 
 	}
+	//end of search
+	public function searchJoin($query, $db, $table, $cols, $match_cols,$joinTable,$joinCond) {
+		//select question from quans where MATCH (question) AGAINST('best language' IN NATURAL LANGUAGE MODE)
+		$data = [];
+		$data_append = [];
+		$num_columns = count($cols);
+		$all_cols = implode(",", $cols);
+		$m_cols = implode(",", $match_cols);
+		$sql = "SELECT $all_cols FROM $table
+				INNER JOIN $joinTable
+				$joinCond
+                WHERE MATCH ($m_cols)
+                AGAINST ('$query' IN NATURAL LANGUAGE MODE)";
+
+		print($sql . "<br>");
+		$result = $db->query($sql);
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
+				for ($col = 0; $col < $num_columns; $col++) {
+					$key = $cols[$col];
+					$data_append[$key] = $row[$key];
+
+				}
+				array_push($data, $data_append);
+			}
+			return $data;
+		} else {
+			return $data;
+		}
+
+	}
+	
 }
 
 ?>

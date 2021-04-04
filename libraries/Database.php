@@ -44,7 +44,7 @@ class Database {
 		$sql_query .= $sql_columns . ") VALUES (";
 		$i = 0;
 		$value_length = count($values);
-		$last_value = $value_length-1;
+		$last_value = $values[$value_length-1];
 		
 		//concatenate each value
 		foreach ($values as $value) {
@@ -64,7 +64,7 @@ class Database {
 		if ($db->query($sql_query) == TRUE) {
 			echo "New record created successfully...";
 		} else {
-			echo "Error: " . $sql_query . "<br>" . $db->error;
+			echo  $db->error;
 		}
 
 		$db->close();
