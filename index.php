@@ -84,8 +84,8 @@ if (isset($_POST["ansubmit"])) {
                     <p id="tag-line">Where questions are themselves the answers!</p>
                 </div>
                 <!-- search form-->
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                    <input name="text" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
+                <form action="includes/search.inc.php" method="GET" enctype="multipart/form-data">
+                    <input name="q" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
                     <i class="material-icons" id="sign">search</i>
                     <!-- submit button-->
                     <input name="submit" type="submit" value="Search" class="up-in" id="qsearch">
