@@ -7,9 +7,7 @@
     include('connect.php');
     
 ?>
-
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
     <!-- header file-->
     <?php include "includes/html-header.php"; ?>
     <!-- end of header file-->

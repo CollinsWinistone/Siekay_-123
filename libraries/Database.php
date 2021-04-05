@@ -150,7 +150,8 @@ class Database {
 			return $data;
 
 		} else {
-			$test = array("helllo");
+			$test = array();
+			return $test;
 		}
 
 	}

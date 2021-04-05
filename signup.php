@@ -1,9 +1,8 @@
 <?php
     session_start();
     
-    if( isset($_SESSION['user'])){
-        header("Location: profile.php");
-    }
+   
+    
     include('connect.php');
     
     
@@ -12,8 +11,7 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
     <!-- header file-->
     <?php include "includes/html-header.php"; ?>
     

@@ -1,45 +1,41 @@
-<!-- navigation bar -->
-<a href="index.php">
-        <div id="log">
-            <div id="i">Q</div>
-            <div id="cir">Q</div>
-            <div id="ntro">_nAnarea</div>
+<?php include "./config/config.php"; ?>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container w-75 mx-auto">
+        <a class="navbar-brand" href="#">
+            <div id="ntro">Q_nAnarea</div>
+        </a>
+
+
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active ">
+                    <a class="nav-link" href="<?php echo $root_url . "index.php"; ?>">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "categories.php"; ?>">categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "contacts.php"; ?>">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "ask.php"; ?>">Ask Question</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "login.php"; ?>">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "profile.php"; ?>">profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $root_url . "signup.php"; ?>">Sign up</a>
+                </li>
+
+            </ul>
+
         </div>
-    </a>
-    <ul id="nav-bar">
-        <a href="index.php">
-            <li id="home">Home</li>
-        </a>
-        <a href="categories.php">
-            <li>Categories</li>
-        </a>
-        <a href="contacts.php">
-            <li>Contact</li>
-        </a>
-        <a href="ask.php">
-            <li>Ask Question</li>
-        </a>
-        <!--show login and signup page if user is not logges in-->
-        <?php
-        if (!isset($_SESSION['user'])) {
-        ?>
-            <a href="login.php">
-                <li>Log In</li>
-            </a>
-            <a href="signup.php">
-                <li>Sign Up</li>
-            </a>
-        <?php
-        } else {
-        ?>
-            <a href="profile.php">
-                <li>Hi, <?php echo $_SESSION["user"]; ?></li>
-            </a>
-            <a href="logout.php">
-                <li>Log Out</li>
-            </a>
-        <?php
-        }
-        ?>
-    </ul>
-    <!--end of navigation bar-->
+    </div>
+</nav>

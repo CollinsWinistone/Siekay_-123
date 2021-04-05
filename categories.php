@@ -45,8 +45,7 @@
     } 
 
 ?>
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
         <?php include "includes/html-header.php"; ?>
         <!-- Sripts -->
         

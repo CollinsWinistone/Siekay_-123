@@ -4,7 +4,7 @@ error_reporting(0);
 
 define('TITLE', "Home ");
 require 'setup/env.php';
-echo $_SESSION['user'];
+
 
 
 include('connect.php');
@@ -42,8 +42,7 @@ if (isset($_POST["ansubmit"])) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
 
 <?php include "includes/html-header.php";?>
 
@@ -84,8 +83,8 @@ if (isset($_POST["ansubmit"])) {
                     <p id="tag-line">Where questions are themselves the answers!</p>
                 </div>
                 <!-- search form-->
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                    <input name="text" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
+                <form action="search.php" method="GET" enctype="multipart/form-data">
+                    <input name="q" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
                     <i class="material-icons" id="sign">search</i>
                     <!-- submit button-->
                     <input name="submit" type="submit" value="Search" class="up-in" id="qsearch">
@@ -96,11 +95,7 @@ if (isset($_POST["ansubmit"])) {
         <div class="pop" id="ta">
             <h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">Ooops...sorry!</b>Your search for "<?php echo $_POST['text'] ?>" didn't match any documents.Please post the question.</h1>
         </div>
-        <div class="pop" id="tb">
-            <center>
-                <h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;"></b>Thank you for your answer.</h1>
-            </center>
-        </div>
+        
         <?php
 
         if (isset($_POST["submit"])) {

@@ -14,6 +14,15 @@ class Category
        
 
     }
+    public function getCategoryName(int $cat_id,Database $dbObj,mysqli $conn)
+    {
+        $data = $dbObj->retrieve(array('name','id'),
+                                "category",
+                                "id='$cat_id'",
+                                 $conn);
+
+        return ($data[0]['name']);
+    }
 }
 
 ?>

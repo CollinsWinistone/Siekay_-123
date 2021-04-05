@@ -8,6 +8,8 @@
     $password = "";
     $database = "test";
 
+    $root_url="http://localhost:8080/legacy/";
+
 
 
 ?>
