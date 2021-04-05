@@ -1,5 +1,7 @@
+<!DOCTYPE html>
+<html>
 <head>
-    <title><?php echo TITLE . ' | ' . APP_TITLE; ?></title>
+    <title>title</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/material.css">

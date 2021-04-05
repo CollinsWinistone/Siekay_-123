@@ -127,6 +127,7 @@ class Database {
 		//test sql
 		//print($sql . "<br>");
 		$result = $conn->query($sql);
+
 		$num_columns = count($selectColumns);
 
 		$start = 0;
@@ -150,7 +151,8 @@ class Database {
 			return $data;
 
 		} else {
-			$test = array("helllo");
+			$test = array();
+			return $test;
 		}
 
 	}

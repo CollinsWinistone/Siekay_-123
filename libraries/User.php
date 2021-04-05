@@ -65,6 +65,7 @@ class User {
 	public function login(array $user_data,$dbc,Database $dbObj,Authenticate $authObj)
 	{
 		$user_auth = $authObj->login_authenticate($user_data,$dbc,$dbObj);
+		
 		$user_available = count($user_auth);
 		if($user_available == 1)
 		{

@@ -10,52 +10,9 @@
     define('TITLE', "Sign-in ");
     require 'setup/env.php';
 
+    
 
 
-
-    if( isset( $_POST["submit"] ) )
-    {   
-
-        function valid($data){
-            $data=trim(stripslashes(htmlspecialchars($data)));
-            return $data;
-        }
-
-        $inuser = valid( $_POST["username"] );
-        $inkey = valid( $_POST["password"] );
-
-
-        $query = "SELECT username, password, name, email, join_date FROM users WHERE username='$inuser'";
-
-        $result = mysqli_query( $conn, $query);
-        if(mysqli_error($conn)){
-            echo "<script>window.alert('Something went wrong. Try again');</script>";
-        }
-        else if( mysqli_num_rows($result) > 0 ){
-            while( $row = mysqli_fetch_assoc($result) ){
-                $user = $row['username'];
-                $pass = $row['password'];
-                $name = $row['name'];
-                $email = $row['email'];
-                $date = $row['join_date'];
-            }
-
-            if( password_verify( $inkey, $pass ) ){
-                $_SESSION['user'] = $user;
-                $_SESSION['name'] = $name;
-                $_SESSION['email'] = $email;
-                $_SESSION['date'] = $date;
-                echo "<script>window.location.href='index.php'</script>";
-            }
-            else{
-                echo "<script>window.alert('Wrong username or password.Try again!');</script>";
-            }
-        }
-        else{
-            echo "<script>window.alert('No Such User exist in database');</script>";
-        }
-        mysqli_close($conn);
-    }
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +35,14 @@
                     <h1 class="logo"><div id="i">Q</div><div id="cir">Q</div><div id="ntro">_nAnarea</div></h1><br>
                     <p id="tag-line">Where questions are themselves the answers!</p>
                     <h1>Login to your account </h1>
+                </div>
+                <div>
+                    <?php
+                    if(isset($_GET['error']))
+                    {
+                        echo "Wrong credentials";
+                    }
+                    ?>
                 </div>
 
                 <!-- login form-->
