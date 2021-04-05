@@ -19,8 +19,7 @@ if(isset($_GET['submit']))
                             $match_col,
                             $joinTable,
                             $joinCond);
-    header("Location :../search.php");
-
+    header("Location: ../search.php?results=$results");
     
 
     

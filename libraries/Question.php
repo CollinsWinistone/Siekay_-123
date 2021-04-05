@@ -102,7 +102,18 @@
     {
 
     }
-    
+    /**
+     * Display details about a particular 
+     */
+    public function getQuestionInfo($id,$conn,Database $dbObj)
+    {
+      $data = $dbObj->retrieve(array('question','askedby','category'),
+                                      'question',
+                                      "question_id=$id",
+                                      $conn);
+      return $data;
+
+    }
     
     
    

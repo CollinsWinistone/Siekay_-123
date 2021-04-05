@@ -82,12 +82,12 @@ class Search {
 		$all_cols = implode(",", $cols);
 		$m_cols = implode(",", $match_cols);
 		$sql = "SELECT $all_cols FROM $table
-				INNER JOIN $joinTable
+				LEFT JOIN $joinTable
 				$joinCond
                 WHERE MATCH ($m_cols)
                 AGAINST ('$query' IN NATURAL LANGUAGE MODE)";
 
-		print($sql . "<br>");
+		//print($sql . "<br>");
 		$result = $db->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {

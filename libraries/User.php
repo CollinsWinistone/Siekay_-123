@@ -114,4 +114,24 @@ class User {
 	{
 		return $this->username;
 	}
+
+	public function getEmail($id,Database $dbObj,$conn)
+	{
+		$data = $dbObj->retrieve(array('email'),
+								 "users",
+								"id = $id",
+									$conn);
+		$email = $data[0]['email'];
+		return $email;
+	}
+
+	public function getDate($id,Database $dbObj,$conn)
+	{
+		$data = $dbObj->retrieve(array('join_date'),
+								 "users",
+								 "id = $id",
+								  $conn);
+		$date = $data[0]['join_date'];
+		return $date;
+	}
 }
