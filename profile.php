@@ -80,8 +80,9 @@ if (!isset($_SESSION['user']))
             </div>
         </center>
     </div>
-
-   
+    <!-- footer-->
+    <?php include "includes/footer.php"; ?>
+    <!-- end footer-->
 
 </body>
 

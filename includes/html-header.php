@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <title>title</title>
     <!-- Required meta tags -->
@@ -12,5 +13,3 @@
     <link rel="icon" href="images/icon1.png">
     <link rel="stylesheet" href="../styles/css/nav.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    
-   

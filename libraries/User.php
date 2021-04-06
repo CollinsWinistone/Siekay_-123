@@ -115,6 +115,13 @@ class User {
 		return $this->username;
 	}
 
+	/**
+	 * Returns the user email
+	 * @param $id -The user id to get email
+	 * @param $dbObj -The database file to perform crud opertions on 
+	 * the database
+	 * @param $conn -The database connection 
+	 */
 	public function getEmail($id,Database $dbObj,$conn)
 	{
 		$data = $dbObj->retrieve(array('email'),

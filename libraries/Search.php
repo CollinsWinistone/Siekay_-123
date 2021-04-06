@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author Collins Simiyu
  * Searches for information in a database
  */
 
@@ -74,6 +75,18 @@ class Search {
 
 	}
 	//end of search
+
+	/**
+	 * Search for information and returns an array of all the
+	 * information available using full text search
+	 * @param $query The search query
+	 * @param $db Database connection
+	 * @param $table Table to conduct the search
+	 * @param $cols -The columns to return
+	 * @param $match_cols - Columns to match against
+	 * @param $joinTable -The table to be joined
+	 * @param $joinTable -Join condition
+	 */
 	public function searchJoin($query, $db, $table, $cols, $match_cols,$joinTable,$joinCond) {
 		//select question from quans where MATCH (question) AGAINST('best language' IN NATURAL LANGUAGE MODE)
 		$data = [];
@@ -106,5 +119,3 @@ class Search {
 	}
 	
 }
-
-?>

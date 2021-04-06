@@ -120,6 +120,11 @@ class Database {
 	}
 	/**
 	 * Retrieve data from the database
+	 * @param $selectColumns -Columns to get information from 
+	 * @param $table -Database table to obtain information from
+	 * @param $condition -Condition for the query
+	 * @param $conn -Database connection
+	 * @return $data -an array of content retrieved
 	 */
 	public function retrieve(array $selectColumns, $table, $condition, $conn) {
 		$s_column = implode(",", $selectColumns);

@@ -1,5 +1,6 @@
 <?php 
 /**
+ * @author Eng Collins Simiyu
  * Contains libraries to facilitate a user
  * to do many staffs on question eg ask,answer,like
  * etc
@@ -54,13 +55,13 @@
 
     /**
      * Display all questions based on Category
-     * @param dbObj -The database file containing CRUD 
+     * @param $dbObj -The database file containing CRUD 
      *              operations
-     * @param table -The table storing question data
-     * @param columns -An array of columns to be returned 
+     * @param $table -The table storing question data
+     * @param $columns -An array of columns to be returned 
      *                for further processing
-     * @param cat_id -Category id to retrieve questions from
-     * @param conn -Database connection
+     * @param $cat_id -Category id to retrieve questions from
+     * @param $conn -Database connection
      */
     public function displayCategoryQuestion(Database $dbObj,
                                             string $table,
@@ -73,8 +74,12 @@
     
     /**
      * Display all questions for a posted by a particular user
-     * @param user_id -Id of the user to retrieve questions
-     * posted by him/her
+     * @param $user_id -Id of the user to retrieve questions
+     *                  posted by him/her
+     * @param $dbObj -Database object to perform CRUD operations
+     * @param $selectColumns -Columns to be selected from the database
+     * @param $condition -Condition for the query
+     * @param $conn -database connection
      */
     public function displayUserQuestion(int $user_id,
                                         Database $dbObj,
@@ -103,7 +108,10 @@
 
     }
     /**
-     * Display details about a particular 
+     * Display details about a particular question
+     * @param $id -Question id
+     * @param $conn -Database connection
+     * @param $dbObj -Database object to perfom CRUD operations
      */
     public function getQuestionInfo($id,$conn,Database $dbObj)
     {

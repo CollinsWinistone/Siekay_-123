@@ -1,6 +1,8 @@
 <?php 
 /**
+ * @author Eng Collins Simiyu
  * Authentication our users
+ * 
  * 
  */
 class Authenticate
@@ -33,9 +35,11 @@ class Authenticate
     }
     /**
      * Logs out a user
+     * or destroys a user session
      */
     public function logout_request()
     {
+        session_destroy();
         
     }
 }

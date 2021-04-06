@@ -1,54 +1,60 @@
 <?php
-    session_start();
+session_start();
 
-    define('TITLE', "Contact us ");
-    require 'setup/env.php';
+define('TITLE', "Contact us ");
+require 'setup/env.php';
 
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>title</title>
-        <link type="text/css" rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="css/material.css">
-        <link type="text/css" rel="stylesheet" href="fonts/font.css">
-        <link rel="icon" href="images/icon1.png" >
-        <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
-    </head>
-    <body id="_4">
-       <?php include "includes/navigation_bar.php"; ?>
-        <!-- content -->
-        <div id="content" class="clearfix">
-            
-            <div id="box-1">
-                <div class="heading">
-                    <center>
-                    <h1 class="logo"><div id="i">Q</div><div id="cir">Q</div><div id="ntro">_nAnarea</div></h1><br>
+
+<head>
+    <title>title</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/material.css">
+    <link type="text/css" rel="stylesheet" href="fonts/font.css">
+    <link rel="icon" href="images/icon1.png">
+    <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body id="_4">
+    <?php include "includes/navigation_bar.php"; ?>
+    <!-- content -->
+    <div id="content" class="clearfix">
+
+        <div id="box-1">
+            <div class="heading">
+                <center>
+                    <h1 class="logo">
+                        <div id="i">Q</div>
+                        <div id="cir">Q</div>
+                        <div id="ntro">_nAnarea</div>
+                    </h1><br>
                     <p id="tag-line">Where questions are themselves the answers!</p>
-                    
-                      
-                      
-                    </center>
-                </div>
+
+
+
+                </center>
             </div>
-            <div id="box-2">
-                <div id="text">
-                    <h1>Q_nAnarea.Inc</h1>
-                    <p>
-                      For troubleshooting and inquiries:<br><br>
-                      
-                        Email: adminqnanarea@gmail.com<br>
-                        Whatsapp: <a style="color:#3800ff"href="https://wa.me/+254745451854">QnAnarea</a><br>
-                        Follow us on Instagram: <a href="#">@q_nanarea</a>
-                    </p>
-                </div>
-            </div>
-            
         </div>
-    
-        
-        
-    </body>
-    
+        <div id="box-2">
+            <div id="text">
+                <h1>Q_nAnarea.Inc</h1>
+                <p>
+                    For troubleshooting and inquiries:<br><br>
+
+                    Email: adminqnanarea@gmail.com<br>
+                    Whatsapp: <a style="color:#3800ff" href="https://wa.me/+254745451854">QnAnarea</a><br>
+                    Follow us on Instagram: <a href="#">@q_nanarea</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <?php include "includes/footer.php"; ?>
+
+</body>
+
 </html>
