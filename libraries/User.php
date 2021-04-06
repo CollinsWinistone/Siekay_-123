@@ -71,9 +71,23 @@ class User {
 		{
 			$uid = $user_auth[0]['id'];
 			$un = $user_auth[0]['username'];
+			$pw_hash = $user_auth[0]['password'];
+			$pwd     = $user_data['password'];
+
+			
 			$this->user_id = $uid;
 			$this->username = $un;
-			return true;
+			if(password_verify($pwd,$pw_hash))
+			{
+				print("Heello collins");
+				return true;
+			}
+			else
+			{
+				print("its a no collins..");
+				return false;
+			}
+			
 		}
 		else
 		{

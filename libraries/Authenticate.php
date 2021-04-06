@@ -20,15 +20,20 @@ class Authenticate
         $username = $user_data['username'];
         $password = $user_data['password'];
 
+
         $selected_cols = [
             'username',
             'password',
             'id'
         ];
         
-        $condition = "username = '$username' AND password = '$password'";
+        $condition = "username = '$username'";
+
         $auth_data = $dbObj->retrieve($selected_cols,"users",$condition,$db);
+        
+        
         return $auth_data;
+        
 
 
 

@@ -1,22 +1,29 @@
 <?php
 include "libraries/User.php";
 include "libraries/Database.php";
+include "libraries/Authenticate.php";
 include "connect.php";
 
 $cosa = new Database();
 $columns = [
-	'username',
-	'password',
-	'name',
-	'email',
+	'username'=>'edna',
+	'password'=>'edna'
+	
+	
 ];
 $values = [
-	'winstone',
-	'Siekay',
-	'Collins Winistone',
-	'win@gmail.com',
+	'edna',
+	'edna'
+	
 
 ];
-$salama = $cosa->retrieve(array('id', 'name', 'description'), "category", "id>1", $conn);
-print("<pre>" . print_r($salama, true) . "</pre>");
+$user = new User();
+$db = new Database();
+$auth = new Authenticate();
+//$user->login($columns,$conn,$db,$auth);
+
+//authentication phase
+$data=$auth->login_authenticate($columns,$conn,$db);
+print_r($data);
+
 ?>
