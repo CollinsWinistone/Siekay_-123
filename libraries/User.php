@@ -134,4 +134,15 @@ class User {
 		$date = $data[0]['join_date'];
 		return $date;
 	}
+
+	public function getUsernameById($id,Database $dbObj,$conn)
+	{
+		$data = $dbObj->retrieve(array('username'),
+								 'users',
+								 "id=$id",
+							      $conn);
+
+		$username = $data[0]['username'];
+		return $username;
+	}
 }

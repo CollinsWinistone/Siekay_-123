@@ -44,58 +44,62 @@ if (isset($_POST["ansubmit"])) {
 ?>
 <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
 
-<?php include "includes/html-header.php";?>
+<?php include "includes/html-header.php"; ?>
 
 </head>
 
 <body id="_1">
     <!--included navigation bar-->
-    <?php include "includes/navigation_bar.php";?>
-    
+    <?php include "includes/navigation_bar.php"; ?>
+
     <!--end of navigation bar-->
 
     <!-- content -->
+    <div>
     <div id="content">
 
-        <div id="searchbox">
+        
+
+            <div id="searchbox">
 
 
-            <center>
+                <center>
 
 
-                <?php
-                if (isset($_SESSION['user'])) {
-                    echo "<p>Thank you " . "<span style='color:green;'>" . $_SESSION['user'] . "</span>" . " for joining QnAnarea,let's build our community together,invite your friends for greater engagement!</p>";
-                } else {
-                    echo "<h2>Welcome to QnAnarea,please login and learn more by asking and answering questions!</h2>";
-                }
-                ?>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        echo "<p>Thank you " . "<span style='color:green;'>" . $_SESSION['user'] . "</span>" . " for joining QnAnarea,let's build our community together,invite your friends for greater engagement!</p>";
+                    } else {
+                        echo "<h2>Welcome to QnAnarea,please login and learn more by asking and answering questions!</h2>";
+                    }
+                    ?>
 
 
-            </center>
-            <center>
-                <div class="heading">
-                    <h1 class="logo">
-                        <div id="i">Q</div>
-                        <div id="cir">Q</div>
-                        <div id="ntro">_nAnarea</div>
-                    </h1><br>
-                    <p id="tag-line">Where questions are themselves the answers!</p>
-                </div>
-                <!-- search form-->
-                <form action="search.php" method="GET" enctype="multipart/form-data">
-                    <input name="q" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
-                    <i class="material-icons" id="sign">search</i>
-                    <!-- submit button-->
-                    <input name="submit" type="submit" value="Search" class="up-in" id="qsearch">
-                </form>
-                <!-- end of search form-->
-            </center>
-        </div>
+                </center>
+                <center>
+                    <div class="heading">
+                        <h1 class="logo">
+                            <div id="i">Q</div>
+                            <div id="cir">Q</div>
+                            <div id="ntro">_nAnarea</div>
+                        </h1><br>
+                        <p id="tag-line">Where questions are themselves the answers!</p>
+                    </div>
+                    <!-- search form-->
+                    <form action="search.php" method="GET" enctype="multipart/form-data">
+                        <input name="q" id="search" type="text" title="Question your Answers" placeholder="Type your question...">
+                        <i class="material-icons" id="sign">search</i>
+                        <!-- submit button-->
+                        <input name="submit" type="submit" value="Search" class="up-in" id="qsearch">
+                    </form>
+                    <!-- end of search form-->
+                </center>
+            </div>
+        
         <div class="pop" id="ta">
             <h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">Ooops...sorry!</b>Your search for "<?php echo $_POST['text'] ?>" didn't match any documents.Please post the question.</h1>
         </div>
-        
+
         <?php
 
         if (isset($_POST["submit"])) {
@@ -215,7 +219,7 @@ if (isset($_POST["ansubmit"])) {
         </center>
     </div>
     <!-- Footer -->
-    <?php include "includes/footer.php";?>
+    <?php include "includes/footer.php"; ?>
     <!-- end of footer-->
 
 </body>

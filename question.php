@@ -1,14 +1,18 @@
 <?php
+session_start();
 
 include "includes/html-header.php";
 include "libraries/Database.php";
 include "libraries/Question.php";
 include "libraries/Answer.php";
+include "libraries/User.php";
 include "connect.php";
 
 $dbObj = new Database();
 $qObj = new Question();
 $ansObj = new Answer();
+$uObj = new User();
+
 
 
 if(isset($_GET['id']))
@@ -32,7 +36,32 @@ $answers =  $ansObj->getAnswer($id,$conn,$dbObj);
         ?>
     </h3>
     <?php foreach($answers as $answer):?>
-    <p><?php echo $answer['answer']; ?></p>
+    <p>
+    <span class="text-danger pr-5">
+        <?php 
+            $data=$uObj->getEmail($_SESSION['id'],$dbObj,$conn);
+            echo $data;
+        ?>
+    </span>
+    <span class="text-primary pr-5">
+        <?php
+            
+
+            echo $answers[0]['answer'];
+
+        ?>
+    </span>
+    <span class="text-primary">
+        <?php
+            
+
+            $uid = $answers[0]['answered_by'];
+            $name = $uObj->getUsernameById($uid,$dbObj,$conn);
+            echo $name;
+
+        ?>
+    </span>
+    </p>
     <?php endforeach; ?>
 
 </div>
